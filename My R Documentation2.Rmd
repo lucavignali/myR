@@ -1,0 +1,143 @@
+---
+title: "My R Documentation"
+author: "Luca Vignali"
+date: "Monday, September 29, 2014"
+output: html_document
+---
+
+# Classes
+Class is a basic property of an R Object. The function class()
+return the class of the object.
+
+## List of Classes in R
+
+There are five basic "atomic" classes:
+
+
+* _integer_:    myNumber <- 3L
+* _numeric_:    myNumber <- 3
+* _complex_:    myComplex <- 1 + 3i
+* _character_:  myname <- "Luca Vignali"
+* _logical_:    myyes <- TRUE
+
+The instruction class() returns the Object class. For example:
+
+```{r}
+myname <- "Luca Vignali"
+class(myname)
+```
+
+Other very important classes are
+
+* _matrix_:     mymatrix <- matrix(1:9,3,3)
+* _data.frame_: myage <- data.frame("Luca Vignali", 43)
+* _list_:       mylist <- list(myage, mymatrix)
+* _function_:   mysquare <- function(x) {x^2}
+* _data.table_: DT[,sum(y),by=x] / DT[,.N,by=COW]
+
+Additional important clasess
+* _density_ 
+* _xtable_
+
+#### Vectors
+Vector is not a class. It is a sequence of objects of the same class.
+
+Vectors can be easily created by combining objects of the same class,
+with the instruction c(). 
+
+
+
+# Functions
+1. table
+2. plot
+3. pie
+4. sample
+5. library
+6. cbind
+7. rbind 
+8. density
+9. paste
+10. print.xtable
+11. xtable
+12. date
+13. head
+14. tail
+15. xmlSApply
+16. xmlRoot
+17. xmlName
+18. xmlValue
+19. xmlSapply
+20. xpathSApply (doc,path,FUN,...) 
+  1. example xpathSApply(xmldata,"//zipcode",xmlValue)
+21. table (df, useNA='ifany'), table(df$pippo,df$pluto) table(df$pippo %in% c(a,b))
+22. setkey
+23. readLines
+24. nchar
+25. which
+26, sort
+27. order
+28, arrange (library plyr)
+29. str
+30. quantile
+31. any
+32. all
+33. colSums, rowSums
+34. xtabs
+35. ftable
+36. object.size
+37. seq
+38. ifelse
+39. cut, breaks
+40. cut2 
+41. mutate
+
+
+
+## Library and Packages management
+1. library
+2. install.packages
+
+## Functions to process files
+1. file.exists("Name of the file or directory")
+2. list.files("Name of the directory")
+3. dir.create("Name of the directory")
+4. download.file(url, destfile, mode)
+5. ?connections
+
+## Functions to read/write files csv,xlsx,xml
+
+1. read.table/csv (file, header, sep, row.names, nrows, col.names, skip, colClasses, quote, na.strings)
+2. read.xlsx - read.xlsx2 (file, sheetIndex, header, colIndex, rowIndex,)
+3. write.xlsx
+
+### Reading and formatting Web Pages and API
+_Packages:_ XML, httr
+
+* xmlTreeParse(file,useInternal)
+* htmlTreeParse(file, useInternal)
+* url (URL, open)
+* close
+* GET(URL, authenticate("user","PWD"), handle APP)
+  * content
+  * handle(URL)
+* Response [URL]
+* oauth_app("twitter", key, secret)
+* signoauth1.0(handle, token, token_secret)
+* content
+* jsonlie::from JSON(toJSON(json1))
+
+
+6. fromJSON(txt)
+7. toJSON(x,pretty=TRUE)
+8. fread
+
+
+
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
